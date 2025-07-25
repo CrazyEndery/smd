@@ -1,0 +1,8 @@
+smd_env/
+*.pyc
+*.log
+*.txt
+*.conll
+*.pdf
+*.json
+*.yaml
