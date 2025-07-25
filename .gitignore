@@ -6,3 +6,4 @@ smd_env/
 *.pdf
 *.json
 *.yaml
+ml/data
