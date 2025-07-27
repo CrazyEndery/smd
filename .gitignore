@@ -1,0 +1,11 @@
+smd_env/
+*.pyc
+*.log
+*.txt
+*.conll
+*.pdf
+*.json
+*.yaml
+ml/data
+*.venv
+ml/notebooks/pdf_metallurgy_corpus_simple.csv
