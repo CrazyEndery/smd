@@ -7,3 +7,5 @@ smd_env/
 *.json
 *.yaml
 ml/data
+*.venv
+ml/notebooks/pdf_metallurgy_corpus_simple.csv
