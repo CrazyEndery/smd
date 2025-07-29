@@ -1,33 +1,31 @@
-from pydantic import BaseModel
-from typing import List, Dict
+from typing import List, Dict, Any
+from pydantic import BaseModel, Field
+
+class FileUploadResponse(BaseModel):
+    file_id: str = Field(..., description="UUID of the stored PDF")
 
 class Entity(BaseModel):
-    word: str
-    entity_group: str
-    score: float
+    text: str
+    label: str
+    start: int
+    end: int
     sentence: str
-
-class EntitiesResponse(BaseModel):
-    entities: List[Entity]
 
 class KGNode(BaseModel):
     id: str
-    type: str
-    conf: float
+    label: str
+    attrs: Dict[str, Any] = {}
 
 class KGEdge(BaseModel):
     source: str
     target: str
     relation: str
-    conf: float
+    attrs: Dict[str, Any] = {}
 
-class KGResponse(BaseModel):
+class KGPayload(BaseModel):
     nodes: List[KGNode]
-    links: List[KGEdge]
+    edges: List[KGEdge]
 
-class FileUploadResponse(BaseModel):
-    message: str
-    file_id: str
-
-class ErrorResponse(BaseModel):
-    detail: str
+class ExtractResponse(BaseModel):
+    entities: List[Entity]
+    kg:     KGPayload
