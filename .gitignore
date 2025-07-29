@@ -9,3 +9,8 @@ smd_env/
 ml/data
 *.venv
 ml/notebooks/pdf_metallurgy_corpus_simple.csv
+
+ml/notebooks/data
+ml/notebooks/ner_matsci_checkpoint
+ml/notebooks/ner_matsci_final
+ml/knowledge_graph.json
