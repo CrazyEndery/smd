@@ -6,6 +6,7 @@ from pathlib import Path
 from src.data_processing import pdf_ingest, clean_text, kg_builder
 from src.inference import model as ner_model, predict as ner_predict
 from src.api.schemas import ExtractResponse, KGPayload
+from fastapi.middleware.cors import CORSMiddleware
 
 # Явные импорты всех схем
 from src.api.schemas import (
@@ -22,6 +23,14 @@ app = FastAPI(
     version="1.0",
     docs_url="/docs",
     openapi_url="/openapi.json"
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 RAW_DIR = Path("data/raw")

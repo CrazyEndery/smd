@@ -1,97 +1,9 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import ReactMarkdown from "react-markdown";
+import axios from "axios";
 import { Network } from "vis-network";
 import { DataSet } from "vis-data";
 import './App.css';
-
-const graphJSON = {
-  "directed": true,
-  "multigraph": false,
-  "graph": {
-    "name": "Industrial Process Extended Graph",
-    "description": "Расширенный граф материалов, оборудования и процессов",
-    "version": "1.0"
-  },
-  "nodes": [
-    { "id": "steel", "label": "steel", "type": "MATERIAL", "conf": 0.95, "description": "Alloy of iron and carbon" },
-    { "id": "furnace", "label": "furnace", "type": "EQUIPMENT", "conf": 0.8, "manufacturer": "FurnaceCo" },
-    { "id": "stainless steel", "label": "stainless steel", "type": "MATERIAL", "conf": 0.85, "description": "Corrosion-resistant alloy" },
-    { "id": "blast furnace", "label": "blast furnace", "type": "EQUIPMENT", "conf": 0.85, "manufacturer": "BlastFurnace Inc." },
-    { "id": "iron ore", "label": "iron ore", "type": "RAW_MATERIAL", "conf": 0.9 },
-    { "id": "carbon", "label": "carbon", "type": "MATERIAL", "conf": 0.9, "description": "Element for alloying" },
-    { "id": "refinery", "label": "refinery", "type": "EQUIPMENT", "conf": 0.7 },
-    { "id": "molding", "label": "molding", "type": "PROCESS", "conf": 0.8 },
-    { "id": "inspection", "label": "inspection", "type": "PROCESS", "conf": 0.6 }
-  ],
-  "links": [
-    {
-      "source": "steel",
-      "target": "furnace",
-      "relation": "FUNCTIONAL",
-      "verb": "processed in",
-      "conf": 0.8,
-      "description": "Steel is processed in furnace"
-    },
-    {
-      "source": "stainless steel",
-      "target": "steel",
-      "relation": "HIERARCHICAL",
-      "conf": 0.7,
-      "description": "Stainless steel is subtype of steel"
-    },
-    {
-      "source": "iron ore",
-      "target": "blast furnace",
-      "relation": "INPUT",
-      "verb": "fed to",
-      "conf": 0.9,
-      "description": "Iron ore fed to blast furnace"
-    },
-    {
-      "source": "carbon",
-      "target": "steel",
-      "relation": "COMPONENT",
-      "verb": "alloyed with",
-      "conf": 0.85
-    },
-    {
-      "source": "blast furnace",
-      "target": "refinery",
-      "relation": "SEQUENTIAL",
-      "verb": "flows to",
-      "conf": 0.75
-    },
-    {
-      "source": "refinery",
-      "target": "molding",
-      "relation": "SEQUENTIAL",
-      "verb": "prepares for",
-      "conf": 0.7
-    },
-    {
-      "source": "molding",
-      "target": "inspection",
-      "relation": "SEQUENTIAL",
-      "verb": "followed by",
-      "conf": 0.65
-    },
-    {
-      "source": "inspection",
-      "target": "steel",
-      "relation": "QUALITY_CONTROL",
-      "verb": "verifies",
-      "conf": 0.6
-    },
-    {
-      "source": "furnace",
-      "target": "refinery",
-      "relation": "FUNCTIONAL",
-      "verb": "connected to",
-      "conf": 0.55
-    }
-  ]
-}
-;
 
 export default function App() {
 
@@ -132,26 +44,26 @@ export default function App() {
   const containerRef = useRef(null);
   const networkInstance = useRef(null);
   const [showGraph, setShowGraph] = useState(false);
+  const [graphJSON, setGraphJSON] = useState({ nodes: [], edges: [] });
 
   useEffect(() => {
     if (showGraph && containerRef.current) {
-      // Преобразуем данные в формат vis.js
-      const nodes = new DataSet(graphJSON.nodes.map(node => ({
+      const nodes = new DataSet((graphJSON.nodes || []).map(node => ({
         id: node.id,
         label: node.label,
-        title: `Type: ${node.type}\nConfidence: ${node.conf}`,
-        color: node.type === "MATERIAL" ? "#66FCF1" : "#45A29E", // Пример: материал — голубые, оборудование — зеленоватые
-        font: { color: "#C5C6C7" }
+        color: "#45A29E",
+        font: { color: "#C5C6C7" },
+        ... (node.attrs || {})
       })));
 
-      // Объекты edges: цель и источник, с направленными стрелками
-      const edges = new DataSet(graphJSON.links.map(link => ({
-        from: link.source,
-        to: link.target,
+      const edges = new DataSet((graphJSON.edges || []).map(edge => ({
+        from: edge.source,
+        to: edge.target,
         arrows: "to",
-        label: link.verb || "",
+        label: edge.relation || "",
         font: { align: "middle", color: "#fff", strokeWidth: 0 },
-        color: { color: "#45A29E" }
+        color: { color: "#45A29E" },
+        ... (edge.attrs || {})
       })));
 
       const data = {
@@ -161,51 +73,49 @@ export default function App() {
 
       // Настройки сети vis.js
       const options = {
-        interaction: {
-          hover: true,
-          multiselect: false,
-          navigationButtons: true,
-          keyboard: true,
+      interaction: {
+        hover: true,
+        multiselect: false,
+        navigationButtons: true,
+        keyboard: true,
+      },
+      nodes: {
+        shape: "dot",
+        size: 16,
+        font: {
+          size: 14,
+          color: "#C5C6C7",
+          face: "Segoe UI, Tahoma, Geneva, Verdana, sans-serif"
         },
-        nodes: {
-          shape: "dot",
-          size: 16,
-          font: {
-            size: 14,
-            color: "#C5C6C7",
-            face: "Segoe UI, Tahoma, Geneva, Verdana, sans-serif"
-          },
-          borderWidth: 2,
-          shadow: true,
+        borderWidth: 2,
+        shadow: true,
+      },
+      edges: {
+        smooth: {
+          type: "cubicBezier",
+          forceDirection: "horizontal",
+          roundness: 0.4,
         },
-        edges: {
-          smooth: {
-            type: "cubicBezier",
-            forceDirection: "horizontal",
-            roundness: 0.4,
-          },
-          color: "#45A29E",
-          width: 2,
-          arrows: {
-            to: { enabled: true, scaleFactor: 1, type: "triangle" }
-          },
-          font: {
-            align: "middle",
-            color: "#66FCF1",
-            background: "none",
-            size: 12,
-          }
+        color: "#45A29E",
+        width: 2,
+        arrows: {
+          to: { enabled: true, scaleFactor: 1, type: "triangle" }
         },
-        physics: {
-          enabled: true,
-          stabilization: { iterations: 100, updateInterval: 10 }
-        },
-        layout: {
-          improvedLayout: true,
-        },
-        // Красивый темный фон в соответствии с цветовой схемой
-        // (сам контейнер styled через CSS)
-      };
+        font: {
+          align: "middle",
+          color: "#66FCF1",
+          background: "none",
+          size: 12,
+        }
+      },
+      physics: {
+        enabled: false,
+        stabilization: { iterations: 100, updateInterval: 10 }
+      },
+      layout: {
+        improvedLayout: true,
+      },
+    };
 
       if (networkInstance.current) {
         networkInstance.current.destroy();
@@ -214,12 +124,12 @@ export default function App() {
 
       networkInstance.current = new Network(containerRef.current, data, options);
     }
-  }, [showGraph]);
+  }, [showGraph, graphJSON]);
 
   // Обработчик кнопки "обработать", включающий показ графа
-  const handleProcessClick = () => {
-    if (!showGraph) setShowGraph(true);
-  };
+  // const handleProcessClick = () => {
+  //   if (!showGraph) setShowGraph(true);
+  // };
 
 //------------------Обработка файла-------------------
 
@@ -227,9 +137,11 @@ export default function App() {
   const [fileInfo, setFileInfo] = useState(null);
   const [error, setError] = useState(null);
   const bottomContainerRef = useRef(null);
+  const [message, setMessage] = useState("");
 
   const handleFile = useCallback(async (file) => {
     setError(null);
+    setMessage("");
 
     if (
       file.type !== "application/pdf" &&
@@ -246,25 +158,17 @@ export default function App() {
       type: file.type,
     });
 
+    const formData = new FormData();
+    formData.append("file", file);
+
     try {
-      const formData = new FormData();
-      formData.append("file", file);
-
-      const response = await fetch("http://localhost:8000/upload-pdf", {
-        method: "POST",
-        body: formData,
+      const { data } = await axios.post("http://localhost:8000/upload", formData, {
+        headers: { "Content-Type": "multipart/form-data" },
       });
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || "Ошибка загрузки файла");
-      }
-
-      const data = await response.json();
-      console.log("Upload успешен:", data);
-    } catch (uploadError) {
-      setError(uploadError.message);
-      setFileInfo(null);
+      setMessage(`Файл загружен. ID: ${data.file_id}`);
+      setFileId(data.file_id);
+    } catch (error) {
+      setMessage(`Ошибка: ${error.response?.data?.detail || error.message}`);
     }
   }, []);
 
@@ -316,6 +220,38 @@ export default function App() {
     [handleFile]
   );
 
+  const [fileId, setFileId] = useState(null);
+  const [processingResult, setProcessingResult] = useState(null);
+  const [loadingUpload, setLoadingUpload] = useState(false);
+  const [loadingProcess, setLoadingProcess] = useState(false);
+
+  const handleProcess = async () => {
+    setError(null);
+    setMessage("");
+    setProcessingResult(null);
+
+    if (!fileId) {
+      setError("Нет ID файла для обработки");
+      return;
+    }
+
+    try {
+      setLoadingProcess(true);
+      const response = await axios.post(`http://localhost:8000/extract/${fileId}`);
+      console.log(response.data.kg);
+      setProcessingResult(response.data);
+      setGraphJSON(response.data.kg);
+      setMessage("Обработка завершена");
+    } catch (err) {
+      setError(`Ошибка обработки: ${err.response?.data?.detail || err.message}`);
+    } finally {
+      setLoadingProcess(false);
+    }
+
+
+
+    if (!showGraph) setShowGraph(true);
+  };
 
 //----------------Body--------------------
 
@@ -359,10 +295,12 @@ export default function App() {
               Добавить файл
           </button>
 
+          {message && <p>{message}</p>}
+
           <button 
             id="process" 
             type="button"
-            onClick={handleProcessClick}
+            onClick={handleProcess}
           >
             Обработать
           </button>

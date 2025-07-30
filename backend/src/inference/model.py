@@ -65,15 +65,12 @@ def get_pipeline(model_dir):
     global _PIPE
     if _PIPE is None:
         # Отладочная информация
-        cuda_available = torch.cuda.is_available()
-        device = 0 if cuda_available else -1
-        
-        print(f"CUDA available: {cuda_available}")
-        print(f"Device value: {device}, type: {type(device)}")
-
+        model = AutoModelForTokenClassification.from_pretrained(model_dir)
         tokenizer = AutoTokenizer.from_pretrained(
             model_dir,
             model_max_length=512,
+            padding_side="right",
+            truncation_side="right",
             use_fast=True
         )
         
@@ -81,10 +78,10 @@ def get_pipeline(model_dir):
         
         pipe = pipeline(
             "ner",
-            model=model_dir,
+            model=model,
             tokenizer=tokenizer,
             aggregation_strategy="simple",
-            device=device,
+            device=0 if torch.cuda.is_available() else -1,
         )
         
         _PIPE = (pipe, tokenizer)  # Возвращаем кортеж
