@@ -16,3 +16,7 @@ ml/notebooks/ner_matsci_final
 ml/knowledge_graph.json
 
 backend/src/model
+
+__pycache__/
+data/
+.env
