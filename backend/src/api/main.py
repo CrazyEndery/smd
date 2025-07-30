@@ -61,8 +61,9 @@ async def extract_entities(file_id: str) -> ExtractResponse:
         raise HTTPException(422, "No valid English text found in PDF")
     
     # 4. Прогнать предложения через модель NER (Fine-tuned MatSciBERT)
-    pipe = ner_model.get_pipeline("src/model")  # путь к модели
-    entities = ner_predict.run(pipe, sentences)
+    pipe, tokenizer = ner_model.get_pipeline("src/model")
+    entities = ner_predict.run(pipe, sentences, tokenizer, max_tokens=512)
+
     
     # 5. Построить knowledge graph на основе найденных сущностей
     kg_graph = kg_builder.build_graph(entities)
