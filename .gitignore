@@ -4,7 +4,6 @@ smd_env/
 *.txt
 *.conll
 *.pdf
-*.json
 *.yaml
 ml/data
 *.venv
@@ -21,3 +20,5 @@ __pycache__/
 data/
 .env
 ml/notebooks/ml_baseline.ipynb
+
+frontend/node_modules
