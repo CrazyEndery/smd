@@ -1,0 +1,837 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "type": "PROCESS",
+      "conf": 0.4916057884693146,
+      "id": "sme"
+    },
+    {
+      "type": "CHEMICAL",
+      "conf": 0.5913900136947632,
+      "id": "##lt"
+    },
+    {
+      "type": "CHEMICAL",
+      "conf": 0.5617859363555908,
+      "id": "##ing"
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.438604474067688,
+      "id": "required"
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.4142720103263855,
+      "id": "187"
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.4365040361881256,
+      "id": "5"
+    },
+    {
+      "type": "CHEMICAL",
+      "conf": 0.46437785029411316,
+      "id": "##lis"
+    },
+    {
+      "type": "PROCESS",
+      "conf": 0.40043312311172485,
+      "id": ","
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.428463339805603,
+      "id": "##mix"
+    },
+    {
+      "type": "CHEMICAL",
+      "conf": 0.40711966156959534,
+      "id": "##ly"
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.4234510660171509,
+      "id": "requires"
+    },
+    {
+      "type": "CHEMICAL",
+      "conf": 0.42431795597076416,
+      "id": "##ion"
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.4620193839073181,
+      "id": "tool"
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.40117308497428894,
+      "id": "resulting"
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.427246630191803,
+      "id": "sources"
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.4368951618671417,
+      "id": "whereas"
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.4278775155544281,
+      "id": "is"
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.44921550154685974,
+      "id": "material"
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.4083649218082428,
+      "id": "3"
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.40759849548339844,
+      "id": "7"
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.40422725677490234,
+      "id": "parameters"
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.4761165976524353,
+      "id": "\u2018"
+    },
+    {
+      "type": "CHEMICAL",
+      "conf": 0.5597217679023743,
+      "id": "##ical"
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.4150412082672119,
+      "id": "77"
+    },
+    {
+      "type": "CHEMICAL",
+      "conf": 0.430004745721817,
+      "id": "##zation"
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.4632568657398224,
+      "id": "##c"
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.4604668915271759,
+      "id": "materials"
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.4944972097873688,
+      "id": "associated"
+    },
+    {
+      "type": "CHEMICAL",
+      "conf": 0.46962836384773254,
+      "id": "##er"
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.4044351577758789,
+      "id": "##ister"
+    },
+    {
+      "type": "CHEMICAL",
+      "conf": 0.4048587679862976,
+      "id": "##ers"
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.4660186469554901,
+      "id": "identified"
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.4067195653915405,
+      "id": "covering"
+    },
+    {
+      "type": "CHEMICAL",
+      "conf": 0.4010307490825653,
+      "id": "process"
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.48138099908828735,
+      "id": "keeping"
+    },
+    {
+      "type": "EQUIPMENT",
+      "conf": 0.41031932830810547,
+      "id": "request"
+    },
+    {
+      "type": "CHEMICAL",
+      "conf": 0.4027057886123657,
+      "id": "##ck"
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.4278193712234497,
+      "id": "excel"
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.4025649428367615,
+      "id": "spreads"
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.40472212433815,
+      "id": "identify"
+    },
+    {
+      "type": "CHEMICAL",
+      "conf": 0.46228545904159546,
+      "id": "study"
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.47635430097579956,
+      "id": "following"
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.44738513231277466,
+      "id": "##5"
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.4122437536716461,
+      "id": "especially"
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.4299703538417816,
+      "id": "has"
+    },
+    {
+      "type": "CHEMICAL",
+      "conf": 0.41331034898757935,
+      "id": "studies"
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.45640674233436584,
+      "id": "working"
+    },
+    {
+      "type": "CHEMICAL",
+      "conf": 0.41105571389198303,
+      "id": "processes"
+    },
+    {
+      "type": "CHEMICAL",
+      "conf": 0.4741956293582916,
+      "id": "##sis"
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.4234737753868103,
+      "id": "produc"
+    },
+    {
+      "type": "CHEMICAL",
+      "conf": 0.40976276993751526,
+      "id": "##be"
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.4105910062789917,
+      "id": "tended"
+    },
+    {
+      "type": "CHEMICAL",
+      "conf": 0.40998581051826477,
+      "id": "##age"
+    },
+    {
+      "type": "CHEMICAL",
+      "conf": 0.4277697801589966,
+      "id": "##ation"
+    },
+    {
+      "type": "CHEMICAL",
+      "conf": 0.4118298292160034,
+      "id": "##e"
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.4035491347312927,
+      "id": "object"
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.4429665803909302,
+      "id": "eco"
+    },
+    {
+      "type": "CHEMICAL",
+      "conf": 0.4219285249710083,
+      "id": "##ast"
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.4030452370643616,
+      "id": "i"
+    },
+    {
+      "type": "CHEMICAL",
+      "conf": 0.44044819474220276,
+      "id": "##rg"
+    },
+    {
+      "type": "CHEMICAL",
+      "conf": 0.45538070797920227,
+      "id": "##tic"
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.40361177921295166,
+      "id": "such"
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.43593621253967285,
+      "id": "three"
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.44409725069999695,
+      "id": "involved"
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.41037341952323914,
+      "id": "five"
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.44959497451782227,
+      "id": "##i"
+    },
+    {
+      "type": "CHEMICAL",
+      "conf": 0.46254420280456543,
+      "id": "##tion"
+    },
+    {
+      "type": "CHEMICAL",
+      "conf": 0.4566150903701782,
+      "id": "##ver"
+    },
+    {
+      "type": "CHEMICAL",
+      "conf": 0.44401252269744873,
+      "id": "##izing"
+    },
+    {
+      "type": "CHEMICAL",
+      "conf": 0.4073036015033722,
+      "id": "##ination"
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.41973620653152466,
+      "id": "neu"
+    },
+    {
+      "type": "CHEMICAL",
+      "conf": 0.44302091002464294,
+      "id": "##ht"
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.4654153883457184,
+      "id": "##55"
+    },
+    {
+      "type": "CHEMICAL",
+      "conf": 0.41442859172821045,
+      "id": "##s"
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.4185117781162262,
+      "id": "##85"
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.5353224277496338,
+      "id": "83"
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.4057612419128418,
+      "id": "23"
+    },
+    {
+      "type": "STANDARD",
+      "conf": 0.40621218085289,
+      "id": "iii"
+    }
+  ],
+  "links": [
+    {
+      "relation": "FUNCTIONAL",
+      "conf": 0.8,
+      "source": "sme",
+      "target": "##lt"
+    },
+    {
+      "relation": "FUNCTIONAL",
+      "conf": 0.8,
+      "source": "##lt",
+      "target": "##ing"
+    },
+    {
+      "relation": "FUNCTIONAL",
+      "conf": 0.8,
+      "source": "##lt",
+      "target": "##lt"
+    },
+    {
+      "relation": "FUNCTIONAL",
+      "conf": 0.8,
+      "source": "##lt",
+      "target": "##er"
+    },
+    {
+      "relation": "FUNCTIONAL",
+      "conf": 0.8,
+      "source": "##lt",
+      "target": "sme"
+    },
+    {
+      "relation": "FUNCTIONAL",
+      "conf": 0.8,
+      "source": "##lt",
+      "target": "##ers"
+    },
+    {
+      "relation": "FUNCTIONAL",
+      "conf": 0.8,
+      "source": "##ing",
+      "target": "##ly"
+    },
+    {
+      "relation": "FUNCTIONAL",
+      "conf": 0.8,
+      "source": "##ing",
+      "target": "##ing"
+    },
+    {
+      "relation": "FUNCTIONAL",
+      "conf": 0.8,
+      "source": "##ing",
+      "target": "##ast"
+    },
+    {
+      "relation": "FUNCTIONAL",
+      "conf": 0.8,
+      "source": "##ing",
+      "target": "process"
+    },
+    {
+      "relation": "FUNCTIONAL",
+      "conf": 0.8,
+      "source": "##ing",
+      "target": "sme"
+    },
+    {
+      "relation": "FUNCTIONAL",
+      "conf": 0.8,
+      "source": "##ing",
+      "target": "such"
+    },
+    {
+      "relation": "FUNCTIONAL",
+      "conf": 0.8,
+      "source": "##ing",
+      "target": "##85"
+    },
+    {
+      "relation": "HIERARCHICAL",
+      "conf": 0.7,
+      "source": "required",
+      "target": "i"
+    },
+    {
+      "relation": "HIERARCHICAL",
+      "conf": 0.7,
+      "source": "187",
+      "target": "7"
+    },
+    {
+      "relation": "FUNCTIONAL",
+      "conf": 0.8,
+      "source": "5",
+      "target": "5"
+    },
+    {
+      "relation": "FUNCTIONAL",
+      "conf": 0.8,
+      "source": "5",
+      "target": ","
+    },
+    {
+      "relation": "FUNCTIONAL",
+      "conf": 0.8,
+      "source": "5",
+      "target": "##s"
+    },
+    {
+      "relation": "FUNCTIONAL",
+      "conf": 0.8,
+      "source": ",",
+      "target": "##sis"
+    },
+    {
+      "relation": "FUNCTIONAL",
+      "conf": 0.8,
+      "source": "##mix",
+      "target": "##lt"
+    },
+    {
+      "relation": "HIERARCHICAL",
+      "conf": 0.7,
+      "source": "##mix",
+      "target": "i"
+    },
+    {
+      "relation": "HIERARCHICAL",
+      "conf": 0.7,
+      "source": "requires",
+      "target": "i"
+    },
+    {
+      "relation": "HIERARCHICAL",
+      "conf": 0.7,
+      "source": "resulting",
+      "target": "i"
+    },
+    {
+      "relation": "HIERARCHICAL",
+      "conf": 0.7,
+      "source": "is",
+      "target": "i"
+    },
+    {
+      "relation": "HIERARCHICAL",
+      "conf": 0.7,
+      "source": "material",
+      "target": "i"
+    },
+    {
+      "relation": "FUNCTIONAL",
+      "conf": 0.8,
+      "source": "\u2018",
+      "target": "sme"
+    },
+    {
+      "relation": "FUNCTIONAL",
+      "conf": 0.8,
+      "source": "\u2018",
+      "target": "##lt"
+    },
+    {
+      "relation": "FUNCTIONAL",
+      "conf": 0.8,
+      "source": "##ical",
+      "target": "processes"
+    },
+    {
+      "relation": "FUNCTIONAL",
+      "conf": 0.8,
+      "source": "##ical",
+      "target": "process"
+    },
+    {
+      "relation": "HIERARCHICAL",
+      "conf": 0.7,
+      "source": "77",
+      "target": "7"
+    },
+    {
+      "relation": "HIERARCHICAL",
+      "conf": 0.7,
+      "source": "materials",
+      "target": "material"
+    },
+    {
+      "relation": "HIERARCHICAL",
+      "conf": 0.7,
+      "source": "materials",
+      "target": "i"
+    },
+    {
+      "relation": "HIERARCHICAL",
+      "conf": 0.7,
+      "source": "associated",
+      "target": "i"
+    },
+    {
+      "relation": "HIERARCHICAL",
+      "conf": 0.7,
+      "source": "##er",
+      "target": "##e"
+    },
+    {
+      "relation": "FUNCTIONAL",
+      "conf": 0.8,
+      "source": "##ister",
+      "target": "##ister"
+    },
+    {
+      "relation": "HIERARCHICAL",
+      "conf": 0.7,
+      "source": "##ister",
+      "target": "is"
+    },
+    {
+      "relation": "HIERARCHICAL",
+      "conf": 0.7,
+      "source": "##ister",
+      "target": "i"
+    },
+    {
+      "relation": "HIERARCHICAL",
+      "conf": 0.7,
+      "source": "##ister",
+      "target": "##i"
+    },
+    {
+      "relation": "FUNCTIONAL",
+      "conf": 0.8,
+      "source": "##ers",
+      "target": "process"
+    },
+    {
+      "relation": "HIERARCHICAL",
+      "conf": 0.7,
+      "source": "##ers",
+      "target": "##er"
+    },
+    {
+      "relation": "HIERARCHICAL",
+      "conf": 0.7,
+      "source": "##ers",
+      "target": "##e"
+    },
+    {
+      "relation": "HIERARCHICAL",
+      "conf": 0.7,
+      "source": "identified",
+      "target": "i"
+    },
+    {
+      "relation": "FUNCTIONAL",
+      "conf": 0.8,
+      "source": "covering",
+      "target": "##lt"
+    },
+    {
+      "relation": "HIERARCHICAL",
+      "conf": 0.7,
+      "source": "covering",
+      "target": "i"
+    },
+    {
+      "relation": "HIERARCHICAL",
+      "conf": 0.7,
+      "source": "keeping",
+      "target": "i"
+    },
+    {
+      "relation": "FUNCTIONAL",
+      "conf": 0.8,
+      "source": "##ck",
+      "target": "##ing"
+    },
+    {
+      "relation": "FUNCTIONAL",
+      "conf": 0.8,
+      "source": "excel",
+      "target": "spreads"
+    },
+    {
+      "relation": "HIERARCHICAL",
+      "conf": 0.7,
+      "source": "identify",
+      "target": "i"
+    },
+    {
+      "relation": "HIERARCHICAL",
+      "conf": 0.7,
+      "source": "following",
+      "target": "i"
+    },
+    {
+      "relation": "HIERARCHICAL",
+      "conf": 0.7,
+      "source": "##5",
+      "target": "5"
+    },
+    {
+      "relation": "HIERARCHICAL",
+      "conf": 0.7,
+      "source": "especially",
+      "target": "i"
+    },
+    {
+      "relation": "FUNCTIONAL",
+      "conf": 0.8,
+      "source": "working",
+      "target": "sme"
+    },
+    {
+      "relation": "HIERARCHICAL",
+      "conf": 0.7,
+      "source": "working",
+      "target": "i"
+    },
+    {
+      "relation": "HIERARCHICAL",
+      "conf": 0.7,
+      "source": "processes",
+      "target": "process"
+    },
+    {
+      "relation": "FUNCTIONAL",
+      "conf": 0.8,
+      "source": "##sis",
+      "target": "process"
+    },
+    {
+      "relation": "HIERARCHICAL",
+      "conf": 0.7,
+      "source": "##sis",
+      "target": "##s"
+    },
+    {
+      "relation": "FUNCTIONAL",
+      "conf": 0.8,
+      "source": "##age",
+      "target": "##age"
+    },
+    {
+      "relation": "FUNCTIONAL",
+      "conf": 0.8,
+      "source": "##ast",
+      "target": "##ing"
+    },
+    {
+      "relation": "FUNCTIONAL",
+      "conf": 0.8,
+      "source": "i",
+      "target": "i"
+    },
+    {
+      "relation": "FUNCTIONAL",
+      "conf": 0.8,
+      "source": "such",
+      "target": "sme"
+    },
+    {
+      "relation": "HIERARCHICAL",
+      "conf": 0.7,
+      "source": "involved",
+      "target": "i"
+    },
+    {
+      "relation": "HIERARCHICAL",
+      "conf": 0.7,
+      "source": "five",
+      "target": "i"
+    },
+    {
+      "relation": "FUNCTIONAL",
+      "conf": 0.8,
+      "source": "##i",
+      "target": "##5"
+    },
+    {
+      "relation": "HIERARCHICAL",
+      "conf": 0.7,
+      "source": "##i",
+      "target": "i"
+    },
+    {
+      "relation": "FUNCTIONAL",
+      "conf": 0.8,
+      "source": "##ver",
+      "target": "##izing"
+    },
+    {
+      "relation": "FUNCTIONAL",
+      "conf": 0.8,
+      "source": "##ination",
+      "target": "process"
+    },
+    {
+      "relation": "HIERARCHICAL",
+      "conf": 0.7,
+      "source": "##55",
+      "target": "5"
+    },
+    {
+      "relation": "HIERARCHICAL",
+      "conf": 0.7,
+      "source": "##55",
+      "target": "##5"
+    },
+    {
+      "relation": "FUNCTIONAL",
+      "conf": 0.8,
+      "source": "##s",
+      "target": "##lt"
+    },
+    {
+      "relation": "HIERARCHICAL",
+      "conf": 0.7,
+      "source": "##85",
+      "target": "5"
+    },
+    {
+      "relation": "HIERARCHICAL",
+      "conf": 0.7,
+      "source": "83",
+      "target": "3"
+    },
+    {
+      "relation": "HIERARCHICAL",
+      "conf": 0.7,
+      "source": "23",
+      "target": "3"
+    },
+    {
+      "relation": "HIERARCHICAL",
+      "conf": 0.7,
+      "source": "iii",
+      "target": "i"
+    }
+  ]
+}
